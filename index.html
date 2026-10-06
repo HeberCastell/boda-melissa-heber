@@ -283,21 +283,28 @@
         </div>
     </section>
 
-    <!-- CONFIRMACIÓN RSVP (WHATSAPP) -->
+<!-- CONFIRMACIÓN RSVP (WHATSAPP DUAL) -->
     <section class="py-16 px-4 bg-gradient-to-t from-creamivory to-white text-center">
         <div class="max-w-xl mx-auto space-y-6">
             <h2 class="font-script text-5xl text-antiquewine">Confirmación de Asistencia</h2>
             <p class="font-serif text-gray-700 text-lg">
-                Tu presencia es el mejor regalo para nosotros. Agradecemos nos des respuesta lo antes posible.
+                Tu presencia es el mejor regalo para nosotros. Por favor, confirma tu asistencia con alguno de nosotros:
             </p>
 
-            <div class="p-6 bg-white rounded-2xl border border-goldenamber/30 shadow-md">
-                <a id="btn-whatsapp" href="https://wa.me/?text=Hola%20Melissa%20y%20Heber,%20muchas%20gracias%20por%20la%20invitaci%C3%B3n.%20Con%20gusto%20confirmo%20mi%20asistencia%20a%20su%20boda." 
-                   target="_blank" 
-                   class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i> Confirmar Asistencia por WhatsApp
+            <div class="p-6 bg-white rounded-2xl border border-goldenamber/30 shadow-md space-y-4">
+                <!-- Botón para confirmar con Melissa -->
+                <a id="btn-whatsapp-melissa" href="#" target="_blank" 
+                   class="w-full inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white text-base md:text-lg font-medium px-6 py-3.5 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Confirmar con Melissa (Novia)
                 </a>
-                <p class="text-xs text-gray-500 mt-4">Fecha límite: 31 de octubre, 2026</p>
+
+                <!-- Botón para confirmar con Heber -->
+                <a id="btn-whatsapp-heber" href="#" target="_blank" 
+                   class="w-full inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white text-base md:text-lg font-medium px-6 py-3.5 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Confirmar con Heber (Novio)
+                </a>
+
+                <p class="text-xs text-gray-500 pt-2">Fecha límite: 15 de Noviembre, 2026</p>
             </div>
         </div>
     </section>
@@ -364,6 +371,7 @@
     </script>
 
     <!-- SCRIPT PARAMETROS URL DE INVITADOS -->
+<!-- SCRIPT PARAMETROS URL DE INVITADOS Y WHATSAPP DUAL -->
     <script>
         function obtenerParametro(nombre) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -390,15 +398,24 @@
             }
         }
 
-        const btnWhatsapp = document.getElementById('btn-whatsapp');
-        if (btnWhatsapp) {
-            let mensajeWhatsApp = "Hola Melissa y Heber, muchas gracias por la invitación.";
-            if (textoInvitado) {
-                mensajeWhatsApp = `Hola Melissa y Heber, soy ${textoInvitado}. Muchas gracias por la invitación, con gusto confirmo mi asistencia a su boda.`;
-            } else {
-                mensajeWhatsApp = "Hola Melissa y Heber, muchas gracias por la invitación. Con gusto confirmo mi asistencia a su boda.";
-            }
-            btnWhatsapp.href = `https://wa.me/?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        // Construir mensajes y enlaces para ambos botones de WhatsApp
+        let mensajeWhatsApp = "Hola Melissa y Heber, muchas gracias por la invitación.";
+        if (textoInvitado) {
+            mensajeWhatsApp = `Hola Melissa y Heber, soy ${textoInvitado}. Muchas gracias por la invitación, con gusto confirmo mi asistencia a su boda.`;
+        }
+
+        const encodedMessage = encodeURIComponent(mensajeWhatsApp);
+
+        // Número de Melissa: 2299786086 (con código de país 52 para México -> 5212299786086 o 522299786086)
+        const btnWhatsappMelissa = document.getElementById('btn-whatsapp-melissa');
+        if (btnWhatsappMelissa) {
+            btnWhatsappMelissa.href = `https://wa.me/522299786086?text=${encodedMessage}`;
+        }
+
+        // Número de Heber: 2223852128 (con código de país 52 -> 522223852128)
+        const btnWhatsappHeber = document.getElementById('btn-whatsapp-heber');
+        if (btnWhatsappHeber) {
+            btnWhatsappHeber.href = `https://wa.me/522223852128?text=${encodedMessage}`;
         }
     </script>
 </body>
