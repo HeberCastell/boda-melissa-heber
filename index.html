@@ -41,11 +41,6 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        /* Sombras suaves y bordes festoneados simulados */
-        .card-scallop {
-            border: 2px solid #C68B3E;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
     </style>
 </head>
     
@@ -83,7 +78,7 @@
         <div class="max-w-md mx-auto px-4">
             <div class="bg-white p-6 rounded-2xl border border-dustyblush/40 shadow-sm">
                 <i class="fa-solid fa-envelope-open-text text-3xl text-terracotta mb-2"></i>
-                <h3 class="font-serif text-2xl text-antiquewine mb-1">Pase Especial</h3>
+                <h3 id="invitado-nombre" class="font-serif text-2xl text-antiquewine mb-1">Estimado(a) Invitado(a)</h3>
                 <p class="text-sm text-gray-600">Esta invitación es válida para:</p>
                 <div class="my-3 py-2 px-4 bg-creamivory rounded-lg inline-block border border-goldenamber/30">
                     <span id="pases-count" class="font-bold text-lg text-terracotta">2 Personas</span>
@@ -160,34 +155,66 @@
 
     <!-- CÓDIGO DE VESTIMENTA (DRESS CODE) -->
     <section class="py-16 px-4 bg-creamivory text-center">
-        <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-3xl border border-goldenamber/30 shadow-md">
-            <i class="fa-solid fa-user-tie text-4xl text-terracotta mb-3"></i>
-            <h2 class="font-script text-5xl text-antiquewine mb-2">Código de Vestimenta</h2>
-            <p class="font-serif text-xl text-gray-700 mb-6">Rigurosa Etiqueta / Formal Boda Otoñal</p>
-            
-            <p class="text-gray-600 text-sm leading-relaxed mb-8">
-                Queremos que luzcan espectaculares. Para ayudarnos a mantener la armonía de nuestras fotografías, les solicitamos tomar en cuenta el código de vestimenta.
-            </p>
+        <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl border border-goldenamber/30 shadow-md space-y-8">
+            <div>
+                <i class="fa-solid fa-user-tie text-4xl text-terracotta mb-3"></i>
+                <h2 class="font-script text-5xl text-antiquewine mb-2">Código de Vestimenta</h2>
+                <p class="font-serif text-xl text-gray-700 mb-4">Rigurosa Etiqueta / Formal Boda Otoñal</p>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-xl mx-auto">
+                    Queremos que luzcan espectaculares. Para ayudarnos a mantener la armonía de nuestras fotografías, les pedimos revisar con atención nuestra paleta de colores.
+                </p>
+            </div>
+
+            <!-- SECCIÓN COLORES PERMITIDOS / SUGERIDOS -->
+            <div class="bg-emerald-50/60 p-6 rounded-2xl border border-emerald-200">
+                <h4 class="font-serif text-lg text-emerald-900 font-semibold mb-2 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600"></i> Colores Sugeridos para Invitados
+                </h4>
+                <p class="text-xs text-gray-600 mb-5">Les recomendamos elegir su vestimenta dentro de los siguientes tonos:</p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-sagegreen shadow-sm border border-black/10"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Verde Olivo / Sage</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-goldenamber shadow-sm border border-black/10"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Ámbar / Dorado</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-[#8C6D58] shadow-sm border border-black/10"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Café / Moka</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-[#D4C5B9] shadow-sm border border-black/10"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Beige / Nude</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- SECCIÓN COLORES RESERVADOS (NO USAR) -->
-            <div class="bg-creamivory p-6 rounded-2xl border border-red-200/60">
+            <div class="bg-rose-50/50 p-6 rounded-2xl border border-rose-200">
                 <h4 class="font-serif text-lg text-antiquewine font-semibold mb-2 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-circle-xmark text-red-700"></i> Colores Reservados para los Novios
+                    <i class="fa-solid fa-circle-xmark text-red-700"></i> Colores Reservados (Prohibido Usar)
                 </h4>
-                <p class="text-xs text-gray-500 mb-4">Por favor, evita vestir en los siguientes tonos:</p>
+                <p class="text-xs text-gray-600 mb-5">Por favor, <strong>EVITA ESTRICTAMENTE</strong> vestir en estos tonos (reservados para novios y damas):</p>
                 
-                <div class="flex flex-wrap justify-center gap-4">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 shadow-inner"></div>
-                        <span class="text-xs mt-1 text-gray-600 font-medium">Blanco / Marfil</span>
+                        <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 shadow-sm"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Blanco / Marfil</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta shadow-inner"></div>
-                        <span class="text-xs mt-1 text-gray-600 font-medium">Terracota</span>
+                        <div class="w-12 h-12 rounded-full bg-terracotta shadow-sm"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Terracota</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 rounded-full bg-antiquewine shadow-inner"></div>
-                        <span class="text-xs mt-1 text-gray-600 font-medium">Vino Intenso</span>
+                        <div class="w-12 h-12 rounded-full bg-antiquewine shadow-sm"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Vino Intenso</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-dustyblush shadow-sm"></div>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Palo de Rosa</span>
                     </div>
                 </div>
             </div>
@@ -203,7 +230,7 @@
             </p>
 
             <div class="p-6 bg-white rounded-2xl border border-goldenamber/30 shadow-md">
-                <a href="https://wa.me/?text=Hola%20Melissa%20y%20Heber,%20muchas%20gracias%20por%20la%20invitaci%C3%B3n.%20Con%20gusto%20confirmo%20mi%20asistencia%20a%20su%20boda." 
+                <a id="btn-whatsapp" href="https://wa.me/?text=Hola%20Melissa%20y%20Heber,%20muchas%20gracias%20por%20la%20invitaci%C3%B3n.%20Con%20gusto%20confirmo%20mi%20asistencia%20a%20su%20boda." 
                    target="_blank" 
                    class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1">
                     <i class="fa-brands fa-whatsapp text-2xl"></i> Confirmar Asistencia por WhatsApp
@@ -243,34 +270,45 @@
             }
         }, 1000);
     </script>
+
+    <!-- SCRIPT PARAMETROS URL DE INVITADOS -->
     <script>
-  // Función para leer los parámetros de la URL
-  function obtenerParametro(nombre) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(nombre);
-  }
+        function obtenerParametro(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
 
-  // Leer los valores desde la URL
-  const nombreInvitado = obtenerParametro('n');
-  const numeroPases = obtenerParametro('p');
+        const nombreInvitado = obtenerParametro('n');
+        const numeroPases = obtenerParametro('p');
 
-  // Actualizar el nombre en la invitación (si existe en la URL)
-  if (nombreInvitado) {
-    // Reemplaza los '+' por espacios
-    const nombreLimpio = nombreInvitado.replace(/\+/g, ' ');
-    const elementoNombre = document.getElementById('invitado-nombre');
-    if (elementoNombre) {
-      elementoNombre.textContent = nombreLimpio;
-    }
-  }
+        let textoInvitado = "";
 
-  // Actualizar el número de pases (si existe en la URL)
-  if (numeroPases) {
-    const elementoPases = document.getElementById('invitado-pases');
-    if (elementoPases) {
-      elementoPases.textContent = numeroPases + (numeroPases == 1 ? ' Pase' : ' Pases');
-    }
-  }
-</script>
+        if (nombreInvitado) {
+            textoInvitado = nombreInvitado.replace(/\+/g, ' ');
+            const elementoNombre = document.getElementById('invitado-nombre');
+            if (elementoNombre) {
+                elementoNombre.textContent = textoInvitado;
+            }
+        }
+
+        if (numeroPases) {
+            const elementoPases = document.getElementById('pases-count');
+            if (elementoPases) {
+                elementoPases.textContent = numeroPases + (numeroPases == 1 ? ' Persona' : ' Personas');
+            }
+        }
+
+        // Personalizar el mensaje de WhatsApp según el nombre del invitado
+        const btnWhatsapp = document.getElementById('btn-whatsapp');
+        if (btnWhatsapp) {
+            let mensajeWhatsApp = "Hola Melissa y Heber, muchas gracias por la invitación.";
+            if (textoInvitado) {
+                mensajeWhatsApp = `Hola Melissa y Heber, soy ${textoInvitado}. Muchas gracias por la invitación, con gusto confirmo mi asistencia a su boda.`;
+            } else {
+                mensajeWhatsApp = "Hola Melissa y Heber, muchas gracias por la invitación. Con gusto confirmo mi asistencia a su boda.";
+            }
+            btnWhatsapp.href = `https://wa.me/?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        }
+    </script>
 </body>
 </html>
