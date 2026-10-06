@@ -35,7 +35,8 @@
         }
     </script>
     <style>
-        .parallax-bg {
+        /* Efecto Parallax Real */
+        .parallax {
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -83,14 +84,14 @@
     
 <body class="bg-creamivory text-gray-800 font-sans antialiased selection:bg-terracotta selection:text-white relative">
 
-    <!-- CONTENEDOR DE PÉTALOS / FLORES FLOTANTES -->
+    <!-- CONTENEDOR DE PÉTALOS FLOTANTES -->
     <div class="petals-container" id="petals-container"></div>
 
-    <!-- HERO SECTION (Parallax Intro) -->
-    <header class="relative min-h-screen flex items-center justify-center text-center p-4 md:p-8 parallax-bg" 
-            style="background-image: linear-gradient(rgba(88, 28, 36, 0.45), rgba(88, 28, 36, 0.45)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
+    <!-- SECCIÓN 1: HERO PARALLAX INTRO -->
+    <header class="relative min-h-screen flex items-center justify-center text-center p-4 md:p-8 parallax" 
+            style="background-image: linear-gradient(rgba(88, 28, 36, 0.5), rgba(88, 28, 36, 0.5)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
         
-        <div class="relative z-10 bg-creamivory/95 backdrop-blur-md p-6 md:p-12 rounded-3xl max-w-2xl border-2 border-goldenamber/40 shadow-2xl space-y-6 transform transition my-8">
+        <div class="relative z-10 bg-creamivory/95 backdrop-blur-md p-6 md:p-12 rounded-3xl max-w-2xl border-2 border-goldenamber/40 shadow-2xl space-y-6 transform transition my-12">
             
             <!-- IMAGEN ESTILIZADA COMO ESTAMPA -->
             <div class="flex justify-center -mb-2">
@@ -100,7 +101,7 @@
             <p class="font-serif text-lg md:text-xl tracking-widest text-terracotta uppercase font-bold">Nos Casamos</p>
             <h1 class="font-script text-6xl md:text-8xl text-antiquewine my-1">Melissa & Heber</h1>
             
-            <!-- TEXTO DE INVITACIÓN Y VERSÍCULO ESTÉTICO -->
+            <!-- TEXTO DE INVITACIÓN Y VERSÍCULO -->
             <div class="space-y-4 pt-1">
                 <p class="font-serif font-bold text-antiquewine text-xl md:text-2xl tracking-wide uppercase">
                     Tenemos el honor de invitarte
@@ -175,14 +176,14 @@
         </div>
     </section>
 
-    <!-- PARALLAX SECTION 2: LUGAR Y FECHA -->
-    <section class="relative py-24 px-4 parallax-bg" 
-             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1545232979-fbf59202c38d?auto=format&fit=crop&w=1920&q=80');">
+    <!-- SECCIÓN 2: LUGAR Y FECHA CON PARALLAX PROFUNDO -->
+    <section class="relative py-28 px-4 parallax" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920&q=80');">
         
         <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-white text-center">
             
             <!-- FECHA & HORA -->
-            <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-lg flex flex-col justify-between">
+            <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-xl flex flex-col justify-between transform hover:scale-[1.02] transition duration-300">
                 <div>
                     <i class="fa-regular fa-calendar-check text-4xl text-goldenamber mb-4"></i>
                     <h3 class="font-serif text-3xl mb-2 font-semibold">Cuándo</h3>
@@ -195,7 +196,7 @@
             </div>
 
             <!-- LUGAR -->
-            <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-lg flex flex-col justify-between">
+            <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-xl flex flex-col justify-between transform hover:scale-[1.02] transition duration-300">
                 <div>
                     <i class="fa-solid fa-location-dot text-4xl text-goldenamber mb-4"></i>
                     <h3 class="font-serif text-3xl mb-2 font-semibold">Dónde</h3>
@@ -204,7 +205,7 @@
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/20">
                     <a href="https://maps.google.com/?q=Hacienda+Zimpizahua+Coatepec+Veracruz" target="_blank" 
-                       class="inline-flex items-center gap-2 bg-goldenamber hover:bg-terracotta text-white px-6 py-2.5 rounded-full font-medium transition duration-300">
+                       class="inline-flex items-center gap-2 bg-goldenamber hover:bg-terracotta text-white px-6 py-2.5 rounded-full font-medium transition duration-300 shadow-md">
                         <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
                     </a>
                 </div>
@@ -306,7 +307,7 @@
         <p class="text-xs font-serif text-white/70 mt-1">19.12.2026 • Hacienda Zimpizahua</p>
     </footer>
 
-    <!-- SCRIPT ANIMACIÓN PÉTALOS / FLORES FLOTANTES -->
+    <!-- SCRIPT ANIMACIÓN PÉTALOS FLOTANTES -->
     <script>
         function createPetal() {
             const container = document.getElementById('petals-container');
@@ -315,13 +316,12 @@
             const petal = document.createElement('div');
             petal.classList.add('petal');
 
-            // Posición aleatoria horizontal, tamaño y duración
-            const size = Math.random() * 8 + 8; // entre 8px y 16px
+            const size = Math.random() * 8 + 8;
             petal.style.width = `${size}px`;
             petal.style.height = `${size * 1.4}px`;
             petal.style.left = `${Math.random() * 100}vw`;
             
-            const duration = Math.random() * 6 + 6; // entre 6 y 12 segundos
+            const duration = Math.random() * 6 + 6;
             petal.style.animationDuration = `${duration}s`;
             
             const delay = Math.random() * 5;
@@ -329,13 +329,11 @@
 
             container.appendChild(petal);
 
-            // Eliminar el pétalo al terminar la animación para optimizar memoria
             setTimeout(() => {
                 petal.remove();
             }, (duration + delay) * 1000);
         }
 
-        // Generar pétalos continuamente (un pétalo cada 400ms)
         setInterval(createPetal, 400);
     </script>
 
