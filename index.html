@@ -48,6 +48,7 @@
         }
     </style>
 </head>
+    
 <body class="bg-creamivory text-gray-800 font-sans antialiased selection:bg-terracotta selection:text-white">
 
     <!-- HERO SECTION (Parallax Intro) -->
@@ -242,5 +243,34 @@
             }
         }, 1000);
     </script>
+    <script>
+  // Función para leer los parámetros de la URL
+  function obtenerParametro(nombre) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(nombre);
+  }
+
+  // Leer los valores desde la URL
+  const nombreInvitado = obtenerParametro('n');
+  const numeroPases = obtenerParametro('p');
+
+  // Actualizar el nombre en la invitación (si existe en la URL)
+  if (nombreInvitado) {
+    // Reemplaza los '+' por espacios
+    const nombreLimpio = nombreInvitado.replace(/\+/g, ' ');
+    const elementoNombre = document.getElementById('invitado-nombre');
+    if (elementoNombre) {
+      elementoNombre.textContent = nombreLimpio;
+    }
+  }
+
+  // Actualizar el número de pases (si existe en la URL)
+  if (numeroPases) {
+    const elementoPases = document.getElementById('invitado-pases');
+    if (elementoPases) {
+      elementoPases.textContent = numeroPases + (numeroPases == 1 ? ' Pase' : ' Pases');
+    }
+  }
+</script>
 </body>
 </html>
