@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda | Melissa & Heber</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#B34A26',
+                        antiquewine: '#581C24',
+                        dustyblush: '#C79288',
+                        creamivory: '#F9F6F0',
+                        sagegreen: '#78866B',
+                        goldenamber: '#C68B3E',
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        script: ['Alex Brush', 'cursive'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Sombras suaves y bordes festoneados simulados */
+        .card-scallop {
+            border: 2px solid #C68B3E;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="bg-creamivory text-gray-800 font-sans antialiased selection:bg-terracotta selection:text-white">
+
+    <!-- HERO SECTION (Parallax Intro) -->
+    <header class="relative min-h-screen flex items-center justify-center text-center p-6 parallax-bg" 
+            style="background-image: linear-gradient(rgba(88, 28, 36, 0.4), rgba(88, 28, 36, 0.4)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
+        
+        <div class="relative z-10 bg-creamivory/90 backdrop-blur-md p-8 md:p-14 rounded-3xl max-w-2xl border-2 border-goldenamber/40 shadow-2xl space-y-6 transform transition hover:scale-[1.01]">
+            <p class="font-serif text-lg md:text-xl tracking-widest text-terracotta uppercase">Nos Casamos</p>
+            <h1 class="font-script text-6xl md:text-8xl text-antiquewine my-2">Melissa & Heber</h1>
+            <p class="font-serif italic text-gray-700 text-lg md:text-xl">"Tenemos el honor de invitarte a compartir con nosotros el día más especial de nuestras vidas."</p>
+            
+            <div class="pt-4 border-t border-goldenamber/30 flex justify-center items-center gap-4 text-terracotta font-serif text-xl">
+                <span>19</span>
+                <span>•</span>
+                <span>DIC</span>
+                <span>•</span>
+                <span>2026</span>
+            </div>
+
+            <a href="#detalles" class="inline-block mt-6 px-8 py-3 bg-terracotta hover:bg-antiquewine text-white rounded-full font-medium transition duration-300 shadow-md">
+                Ver Invitación
+            </a>
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- PASE PERSONALIZADO -->
+    <section class="py-12 bg-creamivory text-center border-b border-goldenamber/20">
+        <div class="max-w-md mx-auto px-4">
+            <div class="bg-white p-6 rounded-2xl border border-dustyblush/40 shadow-sm">
+                <i class="fa-solid fa-envelope-open-text text-3xl text-terracotta mb-2"></i>
+                <h3 class="font-serif text-2xl text-antiquewine mb-1">Pase Especial</h3>
+                <p class="text-sm text-gray-600">Esta invitación es válida para:</p>
+                <div class="my-3 py-2 px-4 bg-creamivory rounded-lg inline-block border border-goldenamber/30">
+                    <span id="pases-count" class="font-bold text-lg text-terracotta">2 Personas</span>
+                </div>
+                <p class="text-xs text-gray-500 italic">Por favor, confirma tu asistencia antes del 15 de Noviembre de 2026.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section id="detalles" class="py-16 px-4 bg-gradient-to-b from-creamivory to-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-script text-5xl text-antiquewine mb-2">Cuenta Regresiva</h2>
+            <p class="font-serif text-gray-600 mb-8 text-lg">Faltan pocos días para dar el "Sí, acepto"</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-xl mx-auto">
+                <div class="bg-creamivory p-4 rounded-xl border border-goldenamber/30 shadow-sm">
+                    <span id="days" class="font-serif text-4xl text-terracotta font-bold">00</span>
+                    <p class="text-xs uppercase tracking-wider text-gray-600 mt-1">Días</p>
+                </div>
+                <div class="bg-creamivory p-4 rounded-xl border border-goldenamber/30 shadow-sm">
+                    <span id="hours" class="font-serif text-4xl text-terracotta font-bold">00</span>
+                    <p class="text-xs uppercase tracking-wider text-gray-600 mt-1">Horas</p>
+                </div>
+                <div class="bg-creamivory p-4 rounded-xl border border-goldenamber/30 shadow-sm">
+                    <span id="minutes" class="font-serif text-4xl text-terracotta font-bold">00</span>
+                    <p class="text-xs uppercase tracking-wider text-gray-600 mt-1">Minutos</p>
+                </div>
+                <div class="bg-creamivory p-4 rounded-xl border border-goldenamber/30 shadow-sm">
+                    <span id="seconds" class="font-serif text-4xl text-terracotta font-bold">00</span>
+                    <p class="text-xs uppercase tracking-wider text-gray-600 mt-1">Segundos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARALLAX SECTION 2: LUGAR Y FECHA -->
+    <section class="relative py-24 px-4 parallax-bg" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1545232979-fbf59202c38d?auto=format&fit=crop&w=1920&q=80');">
+        
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-white text-center">
+            
+            <!-- FECHA & HORA -->
+            <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-lg flex flex-col justify-between">
+                <div>
+                    <i class="fa-regular fa-calendar-check text-4xl text-goldenamber mb-4"></i>
+                    <h3 class="font-serif text-3xl mb-2">Cuándo</h3>
+                    <p class="text-xl font-medium">Sábado, 19 de Diciembre de 2026</p>
+                    <p class="text-goldenamber text-lg mt-2 font-serif">1:00 PM</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/20">
+                    <p class="text-sm opacity-90">Les pedimos puntualidad para disfrutar cada momento juntos.</p>
+                </div>
+            </div>
+
+            <!-- LUGAR -->
+            <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-lg flex flex-col justify-between">
+                <div>
+                    <i class="fa-solid fa-location-dot text-4xl text-goldenamber mb-4"></i>
+                    <h3 class="font-serif text-3xl mb-2">Dónde</h3>
+                    <p class="text-xl font-medium">Hacienda Zimpizahua</p>
+                    <p class="text-gray-200 mt-1">Coatepec, Xalapa, Veracruz</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/20">
+                    <a href="https://maps.google.com/?q=Hacienda+Zimpizahua+Coatepec+Veracruz" target="_blank" 
+                       class="inline-flex items-center gap-2 bg-goldenamber hover:bg-terracotta text-white px-6 py-2.5 rounded-full font-medium transition duration-300">
+                        <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CÓDIGO DE VESTIMENTA (DRESS CODE) -->
+    <section class="py-16 px-4 bg-creamivory text-center">
+        <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-3xl border border-goldenamber/30 shadow-md">
+            <i class="fa-solid fa-user-tie text-4xl text-terracotta mb-3"></i>
+            <h2 class="font-script text-5xl text-antiquewine mb-2">Código de Vestimenta</h2>
+            <p class="font-serif text-xl text-gray-700 mb-6">Rigurosa Etiqueta / Formal Boda Otoñal</p>
+            
+            <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                Queremos que luzcan espectaculares. Para ayudarnos a mantener la armonía de nuestras fotografías, les solicitamos tomar en cuenta el código de vestimenta.
+            </p>
+
+            <!-- SECCIÓN COLORES RESERVADOS (NO USAR) -->
+            <div class="bg-creamivory p-6 rounded-2xl border border-red-200/60">
+                <h4 class="font-serif text-lg text-antiquewine font-semibold mb-2 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-circle-xmark text-red-700"></i> Colores Reservados para los Novios
+                </h4>
+                <p class="text-xs text-gray-500 mb-4">Por favor, evita vestir en los siguientes tonos:</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 shadow-inner"></div>
+                        <span class="text-xs mt-1 text-gray-600 font-medium">Blanco / Marfil</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-terracotta shadow-inner"></div>
+                        <span class="text-xs mt-1 text-gray-600 font-medium">Terracota</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-antiquewine shadow-inner"></div>
+                        <span class="text-xs mt-1 text-gray-600 font-medium">Vino Intenso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIRMACIÓN RSVP (WHATSAPP) -->
+    <section class="py-16 px-4 bg-gradient-to-t from-creamivory to-white text-center">
+        <div class="max-w-xl mx-auto space-y-6">
+            <h2 class="font-script text-5xl text-antiquewine">Confirmación de Asistencia</h2>
+            <p class="font-serif text-gray-700 text-lg">
+                Tu presencia es el mejor regalo para nosotros. Agradecemos nos des respuesta lo antes posible.
+            </p>
+
+            <div class="p-6 bg-white rounded-2xl border border-goldenamber/30 shadow-md">
+                <a href="https://wa.me/?text=Hola%20Melissa%20y%20Heber,%20muchas%20gracias%20por%20la%20invitaci%C3%B3n.%20Con%20gusto%20confirmo%20mi%20asistencia%20a%20su%20boda." 
+                   target="_blank" 
+                   class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Confirmar Asistencia por WhatsApp
+                </a>
+                <p class="text-xs text-gray-500 mt-4">Fecha límite: 15 de Noviembre, 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-antiquewine text-creamivory text-center">
+        <p class="font-script text-3xl text-goldenamber">Melissa & Heber</p>
+        <p class="text-xs font-serif text-white/70 mt-1">19.12.2026 • Hacienda Zimpizahua</p>
+    </footer>
+
+    <!-- SCRIPT CUENTA REGRESIVA -->
+    <script>
+        const weddingDate = new Date("Dec 19, 2026 13:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("detalles").innerHTML = "<h3 class='font-serif text-3xl text-antiquewine'>¡Hoy es nuestro gran día!</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
