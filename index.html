@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -47,17 +47,32 @@
 <body class="bg-creamivory text-gray-800 font-sans antialiased selection:bg-terracotta selection:text-white">
 
     <!-- HERO SECTION (Parallax Intro) -->
-    <header class="relative min-h-screen flex items-center justify-center text-center p-6 parallax-bg" 
-            style="background-image: linear-gradient(rgba(88, 28, 36, 0.4), rgba(88, 28, 36, 0.4)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
+    <header class="relative min-h-screen flex items-center justify-center text-center p-4 md:p-8 parallax-bg" 
+            style="background-image: linear-gradient(rgba(88, 28, 36, 0.45), rgba(88, 28, 36, 0.45)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
         
-        <div class="relative z-10 bg-creamivory/90 backdrop-blur-md p-8 md:p-14 rounded-3xl max-w-2xl border-2 border-goldenamber/40 shadow-2xl space-y-6 transform transition hover:scale-[1.01]">
-            <p class="font-serif text-lg md:text-xl tracking-widest text-terracotta uppercase">Nos Casamos</p>
-            <h1 class="font-script text-6xl md:text-8xl text-antiquewine my-2">Melissa & Heber</h1>
-            <p class="font-serif italic text-gray-700 text-lg md:text-xl">"Como llama divina es el fuego ardiente del amor. Ni las muchas aguas pueden apagarlo, ni los ríos pueden extinguirlo.
-(Cantares 8:6b-7a)"</p>
-            <p class="font-serif bold text-gray-700 text-lg md:text-xl">Tenemos el honor de invitarte a compartir con nosotros el día más especial de nuestras vidas.</p>
+        <div class="relative z-10 bg-creamivory/95 backdrop-blur-md p-6 md:p-12 rounded-3xl max-w-2xl border-2 border-goldenamber/40 shadow-2xl space-y-6 transform transition my-8">
             
-            <div class="pt-4 border-t border-goldenamber/30 flex justify-center items-center gap-4 text-terracotta font-serif text-xl">
+            <!-- IMAGEN NOSOTROS -->
+            <div class="flex justify-center">
+                <img src="imagennosotros.jpeg" alt="Melissa & Heber" class="w-48 md:w-64 h-auto drop-shadow-md hover:scale-105 transition duration-300">
+            </div>
+
+            <p class="font-serif text-lg md:text-xl tracking-widest text-terracotta uppercase font-bold">Nos Casamos</p>
+            <h1 class="font-script text-6xl md:text-8xl text-antiquewine my-1">Melissa & Heber</h1>
+            
+            <!-- TEXTO Y MENSAJE DE INVITACIÓN -->
+            <div class="space-y-3 pt-2">
+                <p class="font-serif font-bold text-antiquewine text-xl md:text-2xl tracking-wide uppercase">
+                    Tenemos el honor de invitarte
+                </p>
+                <div class="bg-white/80 p-4 md:p-5 rounded-2xl border border-goldenamber/30 max-w-lg mx-auto shadow-inner">
+                    <p class="font-serif italic text-gray-800 text-lg md:text-xl leading-relaxed">
+                        "A compartir con nosotros el día más especial de nuestras vidas."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="pt-4 border-t border-goldenamber/30 flex justify-center items-center gap-4 text-terracotta font-serif text-xl font-bold">
                 <span>19</span>
                 <span>•</span>
                 <span>DIC</span>
@@ -65,7 +80,7 @@
                 <span>2026</span>
             </div>
 
-            <a href="#detalles" class="inline-block mt-6 px-8 py-3 bg-terracotta hover:bg-antiquewine text-white rounded-full font-medium transition duration-300 shadow-md">
+            <a href="#detalles" class="inline-block mt-4 px-8 py-3 bg-terracotta hover:bg-antiquewine text-white rounded-full font-medium transition duration-300 shadow-md">
                 Ver Invitación
             </a>
         </div>
@@ -80,7 +95,7 @@
         <div class="max-w-md mx-auto px-4">
             <div class="bg-white p-6 rounded-2xl border border-dustyblush/40 shadow-sm">
                 <i class="fa-solid fa-envelope-open-text text-3xl text-terracotta mb-2"></i>
-                <h3 id="invitado-nombre" class="font-serif text-2xl text-antiquewine mb-1">Estimado(a) Invitado(a)</h3>
+                <h3 id="invitado-nombre" class="font-serif text-2xl text-antiquewine font-bold mb-1">Estimado(a) Invitado(a)</h3>
                 <p class="text-sm text-gray-600">Esta invitación es válida para:</p>
                 <div class="my-3 py-2 px-4 bg-creamivory rounded-lg inline-block border border-goldenamber/30">
                     <span id="pases-count" class="font-bold text-lg text-terracotta">2 Personas</span>
@@ -119,7 +134,7 @@
 
     <!-- PARALLAX SECTION 2: LUGAR Y FECHA -->
     <section class="relative py-24 px-4 parallax-bg" 
-             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-45232979-fbf59202c38d?auto=format&fit=crop&w=1920&q=80');">
+             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1545232979-fbf59202c38d?auto=format&fit=crop&w=1920&q=80');">
         
         <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-white text-center">
             
@@ -127,9 +142,9 @@
             <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-lg flex flex-col justify-between">
                 <div>
                     <i class="fa-regular fa-calendar-check text-4xl text-goldenamber mb-4"></i>
-                    <h3 class="font-serif text-3xl mb-2">Cuándo</h3>
+                    <h3 class="font-serif text-3xl mb-2 font-semibold">Cuándo</h3>
                     <p class="text-xl font-medium">Sábado, 19 de Diciembre de 2026</p>
-                    <p class="text-goldenamber text-lg mt-2 font-serif">1:00 PM</p>
+                    <p class="text-goldenamber text-lg mt-2 font-serif font-bold">1:00 PM</p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/20">
                     <p class="text-sm opacity-90">Les pedimos puntualidad para disfrutar cada momento juntos.</p>
@@ -140,7 +155,7 @@
             <div class="bg-antiquewine/85 backdrop-blur-md p-8 rounded-2xl border border-goldenamber/50 shadow-lg flex flex-col justify-between">
                 <div>
                     <i class="fa-solid fa-location-dot text-4xl text-goldenamber mb-4"></i>
-                    <h3 class="font-serif text-3xl mb-2">Dónde</h3>
+                    <h3 class="font-serif text-3xl mb-2 font-semibold">Dónde</h3>
                     <p class="text-xl font-medium">Hacienda Zimpizahua</p>
                     <p class="text-gray-200 mt-1">Coatepec, Xalapa, Veracruz</p>
                 </div>
@@ -161,7 +176,7 @@
             <div>
                 <i class="fa-solid fa-user-tie text-4xl text-terracotta mb-3"></i>
                 <h2 class="font-script text-5xl text-antiquewine mb-2">Código de Vestimenta</h2>
-                <p class="font-serif text-xl text-gray-700 mb-4">Rigurosa Etiqueta / Formal Boda Otoñal</p>
+                <p class="font-serif text-xl text-gray-700 mb-4 font-semibold">Rigurosa Etiqueta / Formal Boda Otoñal</p>
                 <p class="text-gray-600 text-sm leading-relaxed max-w-xl mx-auto">
                     Queremos que luzcan espectaculares. Para ayudarnos a mantener la armonía de nuestras fotografías, les pedimos revisar con atención nuestra paleta de colores.
                 </p>
@@ -189,7 +204,7 @@
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="w-12 h-12 rounded-full bg-[#D4C5B9] shadow-sm border border-black/10"></div>
-                        <span class="text-xs mt-2 text-gray-700 font-medium">Cualquier otro</span>
+                        <span class="text-xs mt-2 text-gray-700 font-medium">Beige / Nude</span>
                     </div>
                 </div>
             </div>
@@ -199,7 +214,7 @@
                 <h4 class="font-serif text-lg text-antiquewine font-semibold mb-2 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-circle-xmark text-red-700"></i> Colores Reservados (Prohibido Usar)
                 </h4>
-                <p class="text-xs text-gray-600 mb-5">Por favor, <strong>EVITA</strong> vestir en estos tonos (reservados para novios y damas):</p>
+                <p class="text-xs text-gray-600 mb-5">Por favor, <strong>EVITA ESTRICTAMENTE</strong> vestir en estos tonos (reservados para novios y damas):</p>
                 
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div class="flex flex-col items-center">
@@ -237,7 +252,7 @@
                    class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:-translate-y-1">
                     <i class="fa-brands fa-whatsapp text-2xl"></i> Confirmar Asistencia por WhatsApp
                 </a>
-                <p class="text-xs text-gray-500 mt-4">Fecha límite: 31 de Octubre, 2026</p>
+                <p class="text-xs text-gray-500 mt-4">Fecha límite: 15 de Noviembre, 2026</p>
             </div>
         </div>
     </section>
@@ -300,7 +315,6 @@
             }
         }
 
-        // Personalizar el mensaje de WhatsApp según el nombre del invitado
         const btnWhatsapp = document.getElementById('btn-whatsapp');
         if (btnWhatsapp) {
             let mensajeWhatsApp = "Hola Melissa y Heber, muchas gracias por la invitación.";
